@@ -14,6 +14,7 @@ export class AdmService {
   constructor(private router: Router, private http: HttpClient) { }
 
   async todosEmprestimos(): Promise<VisualizarEmpDTO[]> {
+    
     const token = localStorage.getItem('accessToken');
 
     const headers = new HttpHeaders({

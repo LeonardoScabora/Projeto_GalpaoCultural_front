@@ -63,7 +63,10 @@ export class Adm implements OnInit {
 
     devolverLivro(livro: any) {
         if (confirm(`Tem certeza que deseja marcar "${livro.titulo}" como devolvido?`)) {
-            const emprestimos = JSON.parse(localStorage.getItem('emprestimos') || '[]');
+
+            const emprestimos = JSON.parse(
+                localStorage.getItem('emprestimos') || '[]'
+            );
             const emprestimosAtualizados = emprestimos.filter((emp: any) => emp.id !== livro.id);
             localStorage.setItem('emprestimos', JSON.stringify(emprestimosAtualizados));
 
